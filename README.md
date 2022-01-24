@@ -2,7 +2,7 @@
     * Clean Architecture
     * MVVM
       
-*Libraries
+* Libraries
     * Retofit
     * Hilt
     * Android JetPack
