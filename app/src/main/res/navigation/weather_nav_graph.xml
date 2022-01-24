@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/weather_nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/currentWeatherFragment"
+        android:name="com.example.mertkesgin.weatherapp.ui.current_weather.CurrentWeatherFragment"
+        android:label="Today"
+        tools:layout="@layout/fragment_current_weather">
+    <argument
+        android:name="currentWeather"
+        app:argType="com.example.mertkesgin.weatherapp.domain.weather.model.CurrentWeather" />
+    </fragment>
+    <fragment
+        android:id="@+id/cityListFragmet"
+        android:name="com.example.mertkesgin.weatherapp.ui.citiesList.ListCitiesWeatherFragment"
+        android:label="Today"
+        tools:layout="@layout/fragment_list_cities_weather">
+        <action
+            android:id="@+id/navigateToWeatherDetail"
+            app:destination="@id/currentWeatherFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.mertkesgin.weatherapp.ui.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/navigateToList"
+            app:destination="@id/cityListFragmet" />
+    </fragment>
+</navigation>
