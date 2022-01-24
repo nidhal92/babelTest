@@ -31,7 +31,7 @@ class LocationRepositoryImpl @Inject constructor(
     override suspend fun removeLocation(location: String) {
         val arrayLocation = unitProvider.get<ArrayList<String>>(Constant.LOCATION)
         arrayLocation?.removeIf {
-            it.toUpperCase().contains(location.substring(0, location.indexOf(",")).toUpperCase())
+             location.toUpperCase().contains(it.toUpperCase())
         }
         unitProvider.put(arrayLocation, Constant.LOCATION)
     }
